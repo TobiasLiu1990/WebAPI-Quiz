@@ -1,0 +1,30 @@
+{
+  "name": "lecture3-quiz",
+  "version": "1.0.0",
+  "description": "* [ ] Create React application\r     * [ ] package.json - npm run dev/ npm run start\r     * [ ] parcel\r     * [ ] React router\r * [ ] Show existing movies\r * [ ] Add new movies\r     * [ ] useEffect, useState\r * [ ] Introduce testing\r     * [ ] Run jest test\r     * [ ] Snapshot testing\r         * [x] useContext\r     * [ ] Testing with simulated action\r     * [ ] Run test on GitHub action",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mayonnaisu/PG6301-Bogdan-L3-Quiz.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mayonnaisu/PG6301-Bogdan-L3-Quiz/issues"
+  },
+  "homepage": "https://github.com/Mayonnaisu/PG6301-Bogdan-L3-Quiz#readme",
+  "dependencies": {
+    "parcel": "^2.7.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0"
+  },
+  "devDependencies": {
+    "process": "^0.11.10"
+  }
+}
