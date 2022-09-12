@@ -12,7 +12,7 @@ const QUIZ = [
         alt2: "Italy",
         alt3: "Spain",
         alt4: "Germany",
-        rightAnswer: 2
+        rightAnswer: 1
     },
     {
         question: "The country of Sushi",
@@ -56,12 +56,29 @@ function FrontPage() {
 function QuizCard({quiz}) {
     const {question, alt1, alt2, alt3, alt4, rightAnswer} = quiz
 
+    //Check if answer is right.
+    function handleClick(event) {
+        event.preventDefault();
+
+        //HUR KOLLA OM CLICK ÄR RÄTT?
+        console.log(quiz.rightAnswer);
+
+        //if button value == quiz.rightanswer -> rätt. hur göra?!
+
+        if (quiz.rightAnswer) {
+            console.log("did not reach")
+        }
+
+    }
+
     return (
         <div>
             <h2>{question}</h2>
-            <h3>{alt1} ----- {alt2}</h3>
-            <h3>{alt3} ----- {alt4}</h3>
-            <h3>{rightAnswer}</h3>
+            <button value="1" onClick={handleClick}>{alt1}</button>
+            <button>{alt2}</button>
+            <button>{alt3}</button>
+            <button>{alt4}</button>
+            <hr></hr>
         </div>
     );
 }
@@ -76,6 +93,8 @@ function ListQuiz() {
     );
 }
 
+
+//----CREATE NEW QUIZ----------------------
 function CreateQuiz() {
     const [question, setQuestion] = useState("");
     const [alt1, setAlt1] = useState("");
@@ -89,7 +108,7 @@ function CreateQuiz() {
 
     //Connects the input
     useEffect(() => {
-        setNewQuiz({question, alt1, alt2, alt3, alt4, rightAnswer});
+            setNewQuiz({question, alt1, alt2, alt3, alt4, rightAnswer});
         }, [question, alt1, alt2, alt3, alt4, rightAnswer]
     );
 
@@ -97,11 +116,9 @@ function CreateQuiz() {
     function handleSubmit(event) {
         event.preventDefault();
         QUIZ.push(newQuiz);
-
-
         navigate("../");
-
     }
+
     return (
         <form onSubmit={handleSubmit}>
             <h1> Create new Quiz </h1>
@@ -127,9 +144,9 @@ function CreateQuiz() {
         </form>
     );
 }
+
 //<pre> - pre-format text.
 //{JSON.stringify()} - shows the input in this case.
-
 
 
 function QuizApplication() {
@@ -152,5 +169,6 @@ function Application() {
         </BrowserRouter>
     );
 }
+
 root.render(<Application/>);
 
