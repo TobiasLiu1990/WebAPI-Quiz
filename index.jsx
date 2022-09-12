@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
-import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
-import {useState} from "react";
+import {BrowserRouter, Link, Route, Routes, useNavigate} from "react-router-dom";
+import {useEffect, useState} from "react";
 
 const root = ReactDOM.createRoot(document.getElementById("app"));
 
@@ -46,33 +46,27 @@ function FrontPage() {
             <h1> Super hard Quiz </h1>
             <ul>
                 <li><Link to={"/quiz"}> Go to Quiz </Link></li>
-                <li><Link to={"/quiz/new"}> Write your own Quiz</Link></li>
+                <li><Link to={"/quiz/new"}> Make your own Quiz</Link></li>
             </ul>
         </>
     );
 }
 
+//This function returns one quiz.
 function QuizCard({quiz}) {
-    // const [question, setQuestion] = useState("");
-    // const [alt1, setAlt1] = useState("");
-    // const [alt2, setAlt2] = useState("");
-    // const [alt3, setAlt3] = useState("");
-    // const [alt4, setAlt4] = useState("");
-    // const [rightAnswer, setRightAnswer] = useState("");
-
     const {question, alt1, alt2, alt3, alt4, rightAnswer} = quiz
 
     return (
         <div>
             <h2>{question}</h2>
-            <h3>{alt1} *** {alt2}</h3>
-            <h3>{alt3} *** {alt4}</h3>
+            <h3>{alt1} ----- {alt2}</h3>
+            <h3>{alt3} ----- {alt4}</h3>
             <h3>{rightAnswer}</h3>
         </div>
     );
 }
 
-//For each quiz in QUIZ collection - maps
+//This function calls the QuizCard function to list all the quiz.
 function ListQuiz() {
     return (
         <div>
@@ -82,13 +76,68 @@ function ListQuiz() {
     );
 }
 
+function CreateQuiz() {
+    const [question, setQuestion] = useState("");
+    const [alt1, setAlt1] = useState("");
+    const [alt2, setAlt2] = useState("");
+    const [alt3, setAlt3] = useState("");
+    const [alt4, setAlt4] = useState("");
+    const [rightAnswer, setRightAnswer] = useState("");
+    const [newQuiz, setNewQuiz] = useState({});     //default value of useState here is {}, since it should be a new object.
+
+    const navigate = useNavigate();
+
+    //Connects the input
+    useEffect(() => {
+        setNewQuiz({question, alt1, alt2, alt3, alt4, rightAnswer});
+        }, [question, alt1, alt2, alt3, alt4, rightAnswer]
+    );
+
+    //Inner function
+    function handleSubmit(event) {
+        event.preventDefault();
+        QUIZ.push(newQuiz);
+
+
+        navigate("../");
+
+    }
+    return (
+        <form onSubmit={handleSubmit}>
+            <h1> Create new Quiz </h1>
+            <div>
+                Question: <input value={question} onChange={event => setQuestion(event.target.value)}/>
+            </div>
+            <div>
+                Alternative 1: <input value={alt1} onChange={event => setAlt1(event.target.value)}/>
+            </div>
+            <div>
+                Alternative 2: <input value={alt2} onChange={event => setAlt2(event.target.value)}/>
+            </div>
+            <div>
+                Alternative 3: <input value={alt3} onChange={event => setAlt3(event.target.value)}/>
+            </div>
+            <div>
+                Alternative 4: <input value={alt4} onChange={event => setAlt4(event.target.value)}/>
+            </div>
+            <div>
+                Right Answer: <input value={rightAnswer} onChange={event => setRightAnswer(event.target.value)}/>
+            </div>
+            <button>Submit</button>
+        </form>
+    );
+}
+//<pre> - pre-format text.
+//{JSON.stringify()} - shows the input in this case.
+
+
 
 function QuizApplication() {
     return (
-            <Routes>
-                <Route path={"/"} element={<ListQuiz/>}></Route>
-                <Route path={"/new"} element={<div> Add quiz here </div>}></Route>
-            </Routes>
+        <Routes>
+            <Route path={"/"} element={<ListQuiz/>}></Route>
+            <Route path={"/new"} element={<CreateQuiz/>}></Route>
+        </Routes>
     );
 }
 
@@ -103,8 +152,5 @@ function Application() {
         </BrowserRouter>
     );
 }
-
 root.render(<Application/>);
-
-
 
