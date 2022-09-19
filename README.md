@@ -40,4 +40,7 @@ Use "--save-dev" as an option if you want to install as a devDependency
 ### Jest
 
 - npm install -D jest
+- npm install -D babel-jest
+- npm install -D @babel/preset-env @babel/preset-react
+
 

@@ -82,7 +82,7 @@ function QuizCard({quiz}) {
 }
 
 //This function calls the QuizCard function to list all the quiz.
-function ListQuiz() {
+export function ListQuiz() {
     return (
         <div>
             <h1> The Quiz </h1>
