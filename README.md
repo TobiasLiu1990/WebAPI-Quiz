@@ -35,24 +35,25 @@ Use "--save-dev" as an option if you want to install as a devDependency
 - npm install --save-dev <packageName>
 
 
-
 ------------------------
-### Jest
+
+## Jest & Babel
 
 - npm install -D jest
 - npm install -D babel-jest
+- npm install -D jest-environment-jsdom
+- npm install -D jsdom": "^20.0.0
 - npm install -D @babel/preset-env @babel/preset-react
 
-Need to add to run React-code in tests:
--   "babel": {
+### Need to include Babel-jest so that jest can use react code:
+"babel": {
     "presets": [
-    "@babel/preset-env",
-    "@babel/preset-env-react"
+        "@babel/preset-env",
+        "@babel/preset-react"
     ]
-    }
+}
 
-
-Jest uses jsdom to access "document"
+### Jest uses jsdom to access "document"
 "jest": {
     "testEnvironment": "jsdom"
 }
