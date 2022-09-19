@@ -1,9 +1,10 @@
 import * as React from "react";
 import {Route, Routes, useNavigate} from "react-router-dom";
+import {useEffect, useState} from "react";
 
 const QUIZ = [
     {
-        question: "The country of Pizza",
+        question: "The country of Pizzas",
         alt1: "Norway",
         alt2: "Italy",
         alt3: "Spain",
@@ -11,7 +12,7 @@ const QUIZ = [
         rightAnswer: 1
     },
     {
-        question: "The country of Sushi",
+        question: "The country of Sushis",
         alt1: "Finland",
         alt2: "New Zealand",
         alt3: "Japan",

@@ -5,8 +5,6 @@ import {QuizApplication} from "./QuizApplication";
 
 const root = ReactDOM.createRoot(document.getElementById("app"));
 
-
-
 function FrontPage() {
     return (
         <>
@@ -19,8 +17,6 @@ function FrontPage() {
     );
 }
 
-
-
 function Application() {
     return (
         <BrowserRouter>
@@ -32,6 +28,4 @@ function Application() {
         </BrowserRouter>
     );
 }
-
 root.render(<Application/>);
-

@@ -57,3 +57,7 @@ Use "--save-dev" as an option if you want to install as a devDependency
 "jest": {
     "testEnvironment": "jsdom"
 }
+
+
+- To update snapshot:
+- npm run test -- -u
