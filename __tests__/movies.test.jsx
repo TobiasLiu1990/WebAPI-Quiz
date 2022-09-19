@@ -1,10 +1,8 @@
+import * as React from 'react';
 import {render} from "react-dom";
 import {ListQuiz} from "../index";
-import expect from "expect";
 
 
-
-//describe är ett set/suite med tester
 describe("quiz pages", () => {
 
     //it - ett test för settet.

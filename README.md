@@ -43,4 +43,16 @@ Use "--save-dev" as an option if you want to install as a devDependency
 - npm install -D babel-jest
 - npm install -D @babel/preset-env @babel/preset-react
 
+Need to add to run React-code in tests:
+-   "babel": {
+    "presets": [
+    "@babel/preset-env",
+    "@babel/preset-env-react"
+    ]
+    }
 
+
+Jest uses jsdom to access "document"
+"jest": {
+    "testEnvironment": "jsdom"
+}
