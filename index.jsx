@@ -56,28 +56,26 @@ function FrontPage() {
 function QuizCard({quiz}) {
     const {question, alt1, alt2, alt3, alt4, rightAnswer} = quiz
 
-    //Check if answer is right.
+    console.log(quiz)
+
+    //Check if answer is right.x
     function handleClick(event) {
-        event.preventDefault();
+        const answer = document.getElementById("print-answer");
 
-        //HUR KOLLA OM CLICK ÄR RÄTT?
-        console.log(quiz.rightAnswer);
-
-        //if button value == quiz.rightanswer -> rätt. hur göra?!
-
-        if (quiz.rightAnswer) {
-            console.log("did not reach")
+        if (parseInt(event.target.value) === rightAnswer) {
+            answer.innerText = quiz["alt" + event.target.value] + " is correct!"
+        } else {
+            answer.innerText = quiz["alt" + event.target.value] + " is wrong!"
         }
-
     }
 
     return (
         <div>
             <h2>{question}</h2>
             <button value="1" onClick={handleClick}>{alt1}</button>
-            <button>{alt2}</button>
-            <button>{alt3}</button>
-            <button>{alt4}</button>
+            <button value="2" onClick={handleClick}>{alt2}</button>
+            <button value="3" onClick={handleClick}>{alt3}</button>
+            <button value="4" onClick={handleClick}>{alt4}</button>
             <hr></hr>
         </div>
     );
@@ -89,6 +87,8 @@ function ListQuiz() {
         <div>
             <h1> The Quiz </h1>
             {QUIZ.map(q => <QuizCard key={q.question} quiz={q}/>)}
+            <br></br>
+            <h2 id="print-answer"></h2>
         </div>
     );
 }
@@ -102,7 +102,7 @@ function CreateQuiz() {
     const [alt3, setAlt3] = useState("");
     const [alt4, setAlt4] = useState("");
     const [rightAnswer, setRightAnswer] = useState("");
-    const [newQuiz, setNewQuiz] = useState({});     //default value of useState here is {}, since it should be a new object.
+    const [newQuiz, setNewQuiz] = useState({});             //default value of useState here is {}, since it should be a new object.
 
     const navigate = useNavigate();
 
