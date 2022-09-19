@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "parcel index.html",
     "clean": "rimraf dist .parcel-cache",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
     "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
+    "jest": "^29.0.3",
     "process": "^0.11.10",
     "rimraf": "^3.0.2"
   }
