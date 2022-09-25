@@ -1,4 +1,5 @@
 # Movie database
+## Föreläsning 2 - Bogdan
 
 * [x] Create React application
     * [x] package.json - npm run dev/ npm run start
@@ -37,6 +38,7 @@ Use "--save-dev" as an option if you want to install as a devDependency
 
 ------------------------
 
+## Föreläsning 2 - Johannes
 ## Jest & Babel
 
 - npm install -D jest
@@ -61,3 +63,32 @@ Use "--save-dev" as an option if you want to install as a devDependency
 
 - To update snapshot:
 - npm run test -- -u
+
+----------------------
+
+## Föreläsning 3 - Johannes
+
+* [ ] Create react application with parcel
+* [ ] Jest
+* [ ] Snapshot tests
+  * Testing rendering
+
+* [ ] Simulator testing
+  * Testing submission
+
+* [ ] Github Actions
+* [ ] Coverage coveralls.io
+* [ ] Prettier
+* [ ] Typescript
+* [ ] Eslint
+
+
+
+
+
+
+
+
+
+
+

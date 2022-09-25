@@ -1,7 +1,7 @@
 //Functionality for the Quiz.
 
 //Create Objects in array
-export const quizArray = [
+export const QUIZ = [
     {
         id: 1,
         question: "The country of Pizza",

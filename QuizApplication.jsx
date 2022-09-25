@@ -37,6 +37,7 @@ const QUIZ = [
     }
 ];
 
+
 //This function returns one quiz.
 function QuizCard({quiz}) {
     const {question, alt1, alt2, alt3, alt4, rightAnswer} = quiz

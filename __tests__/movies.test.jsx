@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {render} from "react-dom";
 import {ListQuiz} from "../QuizApplication";
-import {quizArray} from '../QuizQuestions'
+import {QUIZ} from '../QuizQuestions'
 
 //describe - används som en suite/set för tester.
 describe("quiz pages", () => {
@@ -15,7 +15,7 @@ describe("quiz pages", () => {
     //Bara för att testa från quizArray från original .js quizet.
     //Ex. 1 från Johannes föreläsning 2 API
     it("lets user add a new quiz", () => {
-        const theAnswer = quizArray.find(q => q.id === 3).rightAnswer;
+        const theAnswer = QUIZ.find(q => q.id === 3).rightAnswer;
 
         expect(theAnswer).toEqual(4);
     });
