@@ -5,11 +5,11 @@ import {useEffect, useState} from "react";
 const QUIZ = [
     {
         question: "The country of Pizzas",
-        alt1: "Norway",
+        alt1: "Norwayy",
         alt2: "Italy",
         alt3: "Spain",
         alt4: "Germany",
-        rightAnswer: 1
+        rightAnswer: 2
     },
     {
         question: "The country of Sushis",

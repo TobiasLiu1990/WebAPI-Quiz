@@ -4,10 +4,10 @@
 * [x] Create React application
     * [x] package.json - npm run dev/ npm run start
     * [x] parcel
-    * [ ] React router
-* [ ] Show existing movies
-* [ ] Add new movies
-    * [ ] useEffect, useState
+    * [x] React router
+* [x] Show existing movies
+* [x] Add new movies
+    * [x] useEffect, useState
 * [ ] Introduce testing
     * [ ] Run jest test
     * [ ] Snapshot testing
@@ -44,7 +44,7 @@ Use "--save-dev" as an option if you want to install as a devDependency
 - npm install -D jest
 - npm install -D babel-jest
 - npm install -D jest-environment-jsdom
-- npm install -D jsdom": "^20.0.0
+- npm install -D jsdom"
 - npm install -D @babel/preset-env @babel/preset-react
 - npm install -D @types/jest
 
@@ -69,9 +69,9 @@ Use "--save-dev" as an option if you want to install as a devDependency
 
 ## Föreläsning 3 - Johannes
 
-* [ ] Create react application with parcel
-* [ ] Jest
-* [ ] Snapshot tests
+* [x] Create react application with parcel
+* [x] Jest
+* [x] Snapshot tests
   * Testing rendering
 
 * [ ] Simulator testing
