@@ -46,6 +46,7 @@ Use "--save-dev" as an option if you want to install as a devDependency
 - npm install -D jest-environment-jsdom
 - npm install -D jsdom": "^20.0.0
 - npm install -D @babel/preset-env @babel/preset-react
+- npm install -D @types/jest
 
 ### Need to include Babel-jest so that jest can use react code:
 "babel": {

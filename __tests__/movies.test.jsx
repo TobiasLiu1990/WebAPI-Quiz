@@ -3,7 +3,7 @@ import {render} from "react-dom";
 import {ListQuiz} from "../QuizApplication";
 import {QUIZ} from '../QuizQuestions'
 
-//describe - används som en suite/set för tester.
+
 describe("quiz pages", () => {
 
     it("quiz list", () => {
@@ -12,13 +12,14 @@ describe("quiz pages", () => {
         expect(element.innerHTML).toMatchSnapshot();           //expect == assert i java.
     });
 
-    //Bara för att testa från quizArray från original .js quizet.
-    //Ex. 1 från Johannes föreläsning 2 API
     it("lets user add a new quiz", () => {
         const theAnswer = QUIZ.find(q => q.id === 3).rightAnswer;
 
         expect(theAnswer).toEqual(4);
     });
+
+
+
 
     //Ex. 2 från Johannes föreläsning 2 API
     //Om t ex man ville printa ut flera properties i ett object så kan detta sättet användas.
